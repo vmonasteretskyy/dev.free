@@ -518,9 +518,6 @@ body {
 	height: 3.5rem;
 }
 .header__nav {
-	-webkit-justify-content: space-between;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
@@ -534,10 +531,25 @@ body {
 	-ms-transition: 0.3s ease;
 	-o-transition: 0.3s ease;
 }
+.menu {
+	margin-left: 72px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.menu__btn {
+	display: none;
+}
+
 .header__content {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
+	margin-left: auto;
 }
 .header__link li {
 	margin-right: 1.2rem;
@@ -569,9 +581,15 @@ body {
 	}
 }
 @media only screen and (max-width: 991.8px) {
+	.header {
+		font-size: 15px;
+	}
 	.header__logo {
 		width: 3.5rem;
 		height: 3.5rem;
+	}
+	.menu {
+		margin-left: 10px;
 	}
 }
 @media only screen and (max-width: 767.8px) {
@@ -593,6 +611,120 @@ body {
 	.header__content {
 		margin-right: 20px;
 	}
+	.menu {
+		margin: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-align: center;
+		padding: 46px 0 20px;
+		width: 240px;
+		display: block;
+		background-color: #fff;
+		opacity: 0;
+		font-size: 18px;
+		transform: translateX(-100%);
+		-webkit-transform: translateX(-100%);
+		-moz-transform: translateX(-100%);
+		-ms-transform: translateX(-100%);
+		-o-transform: translateX(-100%);
+		transition: 0.5s ease;
+		-webkit-transition: 0.5s ease;
+		-moz-transition: 0.5s ease;
+		-ms-transition: 0.5s ease;
+		-o-transition: 0.5s ease;
+		max-height: calc(100vh - 20px);
+		overflow-y: auto;
+		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+		z-index: 1;
+	}
+	.menu.open {
+		opacity: 1;
+		transform: translateX(0);
+		-webkit-transform: translateX(0);
+		-moz-transform: translateX(0);
+		-ms-transform: translateX(0);
+		-o-transform: translateX(0);
+	}
+	.menu__btn {
+		display: block;
+		position: relative;
+		height: 24px;
+		width: 24px;
+		background: transparent;
+		cursor: pointer;
+		padding: 0;
+		z-index: 100;
+		margin-left: 20px;
+		transition: 0.3s;
+		-webkit-transition: 0.3s;
+		-moz-transition: 0.3s;
+		-ms-transition: 0.3s;
+		-o-transition: 0.3s;
+	}
+	.menu__btn > span {
+		display: block;
+		position: absolute;
+		top: 50%;
+		margin-top: -1.5px;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #4f4f4f;
+	}
+	.menu__btn > span::after,
+	.menu__btn > span::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 50%;
+		margin-top: -2px;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #4f4f4f;
+		transition: -webkit-transform 0.4s;
+		transition: transform 0.4s;
+		transition: transform 0.4s, -webkit-transform 0.4s;
+		-webkit-transition: transform 0.4s;
+		-moz-transition: transform 0.4s;
+		-ms-transition: transform 0.4s;
+		-o-transition: transform 0.4s;
+	}
+	.menu__btn > span::after {
+		transform: translateY(-6px);
+		-webkit-transform: translateY(-6px);
+		-moz-transform: translateY(-6px);
+		-ms-transform: translateY(-6px);
+		-o-transform: translateY(-6px);
+	}
+	.menu__btn > span::before {
+		transform: translateY(7px);
+		-webkit-transform: translateY(7px);
+		-moz-transform: translateY(7px);
+		-ms-transform: translateY(7px);
+		-o-transform: translateY(7px);
+	}
+	.menu__btn.active {
+		margin-left: -30px;
+	}
+	.menu__btn.active > span {
+		height: 0;
+	}
+	.menu__btn.active > span::after {
+		transform: rotate(-42deg);
+		-webkit-transform: rotate(-42deg);
+		-moz-transform: rotate(-42deg);
+		-ms-transform: rotate(-42deg);
+		-o-transform: rotate(-42deg);
+	}
+	.menu__btn.active > span::before {
+		transform: rotate(42deg);
+		-webkit-transform: rotate(42deg);
+		-moz-transform: rotate(42deg);
+		-ms-transform: rotate(42deg);
+		-o-transform: rotate(42deg);
+	}
 }
 @media only screen and (max-width: 575.8px) {
 	.header.animated .header__logo {
@@ -604,26 +736,16 @@ body {
 		height: 48px;
 	}
 	.header__content {
-		margin-right: 48px;
+		margin-right: 20px;
 	}
 	.header__link li {
-		margin-right: 48px;
+		margin-right: 14px;
 	}
 	.header__link li::after {
-		margin-left: 48px;
+		margin-left: 14px;
 	}
 }
-@media only screen and (max-width: 374px) {
-	.header__content {
-		margin-right: 30px;
-	}
-	.header__link li {
-		margin-right: 30px;
-	}
-	.header__link li::after {
-		margin-left: 30px;
-	}
-}
+
 .card {
 	display: block;
 	background-color: #fff;
@@ -1206,6 +1328,7 @@ body {
 		background-position: top 54px center;
 		background-size: 770px;
 		height: 500px;
+		max-height: inherit;
 	}
 	.first-screen__image {
 		width: 18rem;

@@ -3478,7 +3478,7 @@ a.label-busy:hover {
 .footer__nav li {
   margin-bottom: 0.9rem;
   color: #4f4f4f;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 140%;
 }
@@ -3508,17 +3508,17 @@ a.label-busy:hover {
 
   .footer__nav {
     text-align: center;
-    font-size: 15px;
+  }
+
+  .footer__nav li {
+    font-size: 14px;
   }
 }
 
 @media screen and (max-width: 767.8px) {
   .footer {
-    padding: 5rem 0 1.5rem;
-  }
-
-  .footer__nav {
-    display: none;
+    padding: 7rem 0 1rem;
+    margin-top: -2rem;
   }
 
   .footer__logo {
@@ -3546,7 +3546,7 @@ a.label-busy:hover {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
   }
 
   .footer__language {
@@ -3613,6 +3613,10 @@ a.label-busy:hover {
     position: absolute;
     top: -48px;
     left: 0;
+  }
+
+  .footer__box {
+    margin-bottom: 2rem;
   }
 }
 /* footer */

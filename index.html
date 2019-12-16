@@ -45,12 +45,14 @@
             <nav class="header__nav d-flex">
                 <a href="index.html" class="header__logo"> <img src="img/homepage/Logo-small.svg" alt="Freelance"> </a>
                 <div id="navbar-collapse-index">
-                    <ul style="display: flex" class="nav navbar-nav ">
+                    <div class="menu__btn">
+                        <span></span>
+                    </div>
+                    <ul class="nav navbar-nav menu">
                         <li><a href="http://dev.freelance.ua/orders/">Заказы</a></li>
                         <li><a href="http://dev.freelance.ua/users/">Исполнители</a></li>
                         <li><a href="http://dev.freelance.ua/blog/">Блоги</a></li>
                     </ul>
-
                 </div>
                 <div class="header__content d-flex">
                     <ul class="header__link d-flex">
@@ -247,16 +249,13 @@
                         <p></p>
                         <ul class="footer__language" role="menu">
                             <li class="active">
-                                <a href="index.html">
-                                    Русский </a>
+                                <a href="index.html">Русский</a>
                             </li>
                             <li>
-                                <a href="http://dev.freelance.ua/uk/">
-                                    Українська </a>
+                                <a href="http://dev.freelance.ua/uk/">Українська</a>
                             </li>
                             <li>
-                                <a href="http://dev.freelance.ua/en/">
-                                    English </a>
+                                <a href="http://dev.freelance.ua/en/">English</a>
                             </li>
                         </ul>
                     </div>
@@ -298,7 +297,7 @@
         </div>
     </footer>
     <script src="js/bff/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="http://dev.freelance.ua/files/min/bff.3adc77d2a7af060603f6ad6e454e60a8.js?v=27aef6"
+    <!-- <script src="http://dev.freelance.ua/files/min/bff.3adc77d2a7af060603f6ad6e454e60a8.js?v=27aef6"
         type="text/javascript" charset="utf-8"></script>
     <script src="js/bootstrap3.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="http://dev.freelance.ua/files/min/app.22d9f2ab45000df9be42ff008f55a160.js?v=1882cf"
@@ -307,7 +306,7 @@
         type="text/javascript" charset="utf-8"></script>
     <script src="http://dev.freelance.ua/files/min/homepage.dba4954292aa42babfd9453c72053f33.js?v=939575"
         type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
+    <script type="text/javascript"> -->
     </script>
     <script type="text/javascript">
         //<![CDATA[
@@ -323,6 +322,22 @@
         });
 
 //]]></script>
+
+    <script>
+        // open menu on mobile screen
+        $(".menu__btn").on("click", function () {
+            $(this).toggleClass("active");
+            $(".menu").toggleClass("open");
+            $(".dropdown-menu").slideUp();
+            $("body").toggleClass("overflow-hidden");
+        });
+
+        $('.footer__language a').each(function () {
+            let textLength = $(this).text().substring(0, 3);
+            $(this).text(textLength);
+        });
+    </script>
+
 </body>
 
 </html>

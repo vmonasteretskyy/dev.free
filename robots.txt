@@ -1,0 +1,35 @@
+User-agent: *
+
+
+Allow: /files/sitemap.xml
+Disallow: /admin
+Disallow: /user/login
+Disallow: /user/messages/
+Disallow: /user/messages/chat/
+Disallow: /users/activate/
+Disallow: /user/forgot
+Disallow: /files/
+Disallow: /uk/admin
+Disallow: /uk/user/login
+Disallow: /uk/user/messages/
+Disallow: /uk/user/messages/chat/
+Disallow: /uk/users/activate/
+Disallow: /uk/files/
+Disallow: /uk/user/forgot
+Disallow: /uk/orders/*
+Disallow: /en/user/login
+Disallow: /en/user/messages/
+Disallow: /en/user/messages/chat/
+Disallow: /en/users/activate/
+Disallow: /en/user/forgot
+Disallow: /en/files/
+Disallow: /en/orders/*
+Disallow: /uk/?*
+Disallow: /en/?*
+Disallow: /user/*/portfolio/*
+Disallow: /uk/user/*/portfolio/*
+Disallow: /en/user/*/portfolio/*
+Disallow: /uk/*
+Disallow: /en/*
+
+Host: freelance.ua
